@@ -1,0 +1,6 @@
+name: mad-dev-guides-m6
+title: Module 6 - Intelligent application with RHODS
+version: main
+nav:
+  - modules/ROOT/nav.adoc
+start_page: ROOT:1-introduction.adoc
