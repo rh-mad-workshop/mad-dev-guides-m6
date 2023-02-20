@@ -1,0 +1,2 @@
+= 2. Working with notebooks - 10 minutes
+:imagesdir: ../assets/images
