@@ -67,7 +67,7 @@ We are now ready to use notebooks!
 
 == Working with notebooks
 
-This section provides a small introduction on how to use Jupyter Notebooks. If you are already at ease with Jupyter, you can directly head to the link:3-model-deployment.html[next section].
+This section provides a small introduction on how to use Jupyter Notebooks. If you are already at ease with Jupyter, you can directly head to the link:3-model-training.html[next section].
 
 === What's a notebook?
 
@@ -109,4 +109,4 @@ image::launch_notebook_icon.png[]
 
 If you want to learn more about notebooks, head to https://jupyter.org/[this page,window=_blank].
 
-Now that you are more familiar with notebooks, you are ready to go to the link:3-model-deployment.html[next section].
+Now that you are more familiar with notebooks, you are ready to go to the link:3-model-training.html[next section].
