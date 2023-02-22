@@ -25,3 +25,6 @@ hs_err_pid*
 # NPM - Dev
 node_modules
 gh-pages
+
+# VSCode personal setting
+.vscode/
