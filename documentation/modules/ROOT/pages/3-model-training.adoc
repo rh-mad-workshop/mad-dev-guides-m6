@@ -1,0 +1,91 @@
+= Model training
+:imagesdir: ../assets/images
+
+In this section, we will explore how data scientists are training models. It will be a very simple example, but it will give you the basics on the workflow.
+
+* If you still have your sandbox notebook opened, please first close it:
+
+image::close_sandbox.png[]
+
+We also need to shut down the pod, as for the rest of the workshop we will use a Data Science Project.
+
+* If you still have you OpenShift Data Science dashboard tab opened in your browser, you simply close the JupyterLab tab, and click on **Stop notebook server** on the dashboard:
+
+image::stop_notebook_server.png[]
+
+* If you have closed the OpenShift Data Science dashboard, you can reopen from Jupyter by clicking on **File->Hub Control Panel**:
+
+image::hub_panel.png[]
+
+It will reopen a tab with the dashboard, from which you can stop the notebook environment as described before. We are now ready to work in a Data Science Project.
+
+== Data Science Project
+
+We will need a data science project to host all our work: model training, model serving, application deployment,... As stated earlier, a data science project translates to an OpenShift project, but you don't need to leave the RHODS environment!
+
+=== Creating the DSP
+
+* Head to **Data Science Projects** and click on **Create data science project**:
+
+image::create_dsp.png[]
+
+* Give a name to your project. It will be the Display name for OpenShift, and the Resource name is automatically sanitized and created for you. You can also add a description if you want:
+
+image::create_dsp_modal.png[]
+
+* Now, if you are curious and have a look at your OpenShift console, you will see that the project has indeed been created:
+
+image::my_dsp_console.png[]
+
+=== Working with the DSP
+
+In a Data Science Project you have different sections:
+
+* Workbenches are development environments. They can be based on JupyterLab, but also on other types of IDEs as we will see later, like VSCode and RStudio. You can create as many workbenches as you want, and they can run concurrently.
+* Cluster storage is in fact PVCs. You can create them directly from here, and mount them in your workbenches as you like. A default cluster storage (PVC) is always created with a new workbench to save your work.
+* Data connections are configurations for remote data location. At the moment, only Object Storage compatible with S3 is supported. We will use this feature later on to configure storage for our models on OpenShift Data Foundation with the Multi Cloud Gateway (MCG).
+* Finally, Model Servers are used to... serve models! But let's save that for later.
+
+For now, let's create a new workbench to work with Tensorflow to train models!
+
+* Click on **Create workbench**
+
+image::create_workbench.png[]
+
+* Give it a name, select the **Tensorflow** image, with a Deployment size of **Small**, and a Cluster storage space of 1GB, it will be enough:
+
+image::create_workbench_1.png[]
+image::create_workbench_2.png[]
+
+* And of course, click on **Create workbench**:
+
+image::create_workbench_click.png[]
+
+* The workbench is created, first in the **Starting state**:
+
+image::workbench_starting.png[]
+
+You can use this toggle to easily start/stop this environment later on.
+
+* When it is ready, the state will change to **Running** and you can click on **Open** to get to your environment:
+
+image::workbench_running.png[]
+
+* After authentication and allowing permissions, you are again in your now familiar JupyterLab environment:
+
+image::workbench_jl.png[]
+
+== Model training
+
+We are now ready to do some serious work!
+
+* Again, from the Git menu on the left, clone the repository https://github.com/rh-aiservices-bu/mad_m6_workshop.git
+
+* Open the file 02_model_training_basics.ipynb, and follow the instructions directly in the notebook. When you are finished, you can come back here and head for the next section.
+
+
+
+
+
+
+

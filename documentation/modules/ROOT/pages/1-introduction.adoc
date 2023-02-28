@@ -1,2 +1,40 @@
-= 1. Introduction - 10 minutes
+= Red Hat OpenShift Data Science Introduction
 :imagesdir: ../assets/images
+
+== What is Red Hat OpenShift Data Science (RHODS)?
+
+Red Hat OpenShift Data Science is a platform, running on OpenShift, for data scientists and developers of intelligent applications. It provides a fully supported environment in which to rapidly develop, train, and test machine learning (ML) models that can be deployed in production. You can also use it for more standard data analysis or processing.
+
+In this workshop we will see how to use OpenShift Data Science to train a model, how to serve this model as an API, and how to create an intelligent application that will use this model. In exploring this content, you will become familiar with the OpenShift Data Science offering and common workflows to use with it.
+
+== Access OpenShift Data Science
+
+OpenShift Data Science has already been deployed in the workshop environment, here is how to access it. From the Openshift Console, click on the applications icon on the top right of the console, and select Red Hat OpenShift Data Science:
+
+image::launch-rhods.png[]
+
+Login with the credentials you were given at the beginning of this workshop.
+
+== Quick tour of RHODS
+
+* In the **Applications->Enabled** section, you will have access or information about all the applications that are available in RHODS:
+
+image::enabled.png[]
+
+* **Applications->Explore** will show you what other applications can be optionally added to RHODS:
+
+image::explore.png[]
+
+* **Data Science Projects** translate to OpenShift projects/namespaces, where you can deploy different development environments (Jupyter Notebooks, VSCode, RStudio,...), add data connections, or serve models. We will use a data science project later in this workshop:
+
+image::dsp.png[]
+
+* **Model Serving** is another view to all the model servers you have currently in place across different projects.
+
+* **Resources** will give you access to various tutorials or demos helping your onboarding to the platform:
+
+image::resources.png[]
+
+'''
+
+Now that we know our way into the RHODS environment, let's do some data science work!

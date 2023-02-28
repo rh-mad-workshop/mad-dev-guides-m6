@@ -1,0 +1,2 @@
+= 4. Working with custom images - 10 minutes
+:imagesdir: ../assets/images
