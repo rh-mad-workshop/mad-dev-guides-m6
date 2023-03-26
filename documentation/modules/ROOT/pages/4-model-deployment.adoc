@@ -1,2 +1,88 @@
-= 3. Deploying a model - 10 minutes
+= Deploying a model
 :imagesdir: ../assets/images
+
+After this overview of how a model is trained and how to use it, we're going to see how you can use RHODS to serve it. It will then be easier to consume later on in our intelligent application.
+
+The model we are going to use is an **object detection model** that is able to isolate and recognize **T-shirts**, **bottles**, and **hats** in pictures. Although the process to train this model is globally the same one as we have seen in the previous section, it has already been trained as it takes a few hours with the help of a GPU to do it.
+
+The resulting model has been saved in the https://onnx.ai/[ONNX] format, an open standard for machine learning interoperability, which is one we can use with RHODS model serving. The model has been stored and is available for download in an AWS S3 bucket.
+
+Let's serve this model!
+
+== Check the model
+
+There are many ways and different tools available to interact with Object Storage. Here we are going to use the Python library named `boto3`.
+
+* In the notebook we are going to use, you will need to enter a key to decrypt the credentials to access the model location. This key is:
+
+`Is_34AxyLht603Lh4z6UYztla79lQ3oz_os7U99JsKQ=`
+
+Please copy it, you will use it in a few seconds.
+
+(Don't worry, the bucket we are going to access is readonly, and those access/secret can only be used to read the public model file. So even the decrypted credentials are not sensitive at all.)
+
+* In your project in JupyterLab, open the notebook `03_check_model` and follow the instructions to check the availability and the exact location of the model. Again, don't forget to run the cells!
+
+* Once you are finished, you can come back to these instructions.
+
+== Deploy the model in RHODS
+
+With your model available on S3 storage, it is pretty easy to serve it.
+
+* In the RHODS dashboard, still in your Data Science Project, create a Data connection. It will serve as a reference and configuration for access to the object bucket. In the **Data connections** section, click on **Add data connection**:
+
+image::add_data_connection.png[]
+
+* Fill in the information, the click on **Add data connection**:
+    ** Name it `Coolstore`
+    ** `AWS_ACCESS_KEY_ID` is the `Access key` you got in the previous step in the notebook.
+    ** `AWS_SECRET_ACCESS_KEY` is the `Secret key` you got in the previous step in the notebook.
+    ** `AWS_S3_ENDPOINT` is `https://s3.amazonaws.com/` (default).
+    ** `AWS_DEFAULT_REGION` is `us-east-1` (default).
+    ** `AWS_S3_BUCKET` is `rh-mad-workshop-m6`.
+
+image::data_connection_configuration.png[]
+
+* You now have a data connection ready to use:
+
+image::data_connection_ok.png[]
+
+* Now, on the **Models and model servers** section click on **Configure server**:
+
+image::configure_model_server.png[]
+
+* Leave replicas to 1, size to Small. At this point, don't check **Make model available via an external route**. Then click on **Configure**:
+
+image::model_server_configure.png[]
+
+* We now have a model server available (but no model deployed yet):
+
+image::model_server_available.png[]
+
+* Click on **Deploy model**:
+
+image::deploy_model.png[]
+
+* Give a name to your model, `coolstore`, select **onnx - 1** for the framework, select the Data location you created before for the Model location, and enter **coolstore-model** as the folder path for the model (without leading `/`!), then click on **Deploy**:
+
+image::deploy_model_configuration.png[]
+
+* The model is now deployed:
+
+image::deployed_models.png[]
+
+* After some time, under the **Status** column, you should see a green tick to the right of you model, indicating it's ready for use!
+
+image::model_ready.png[]
+
+* Once it's ready, click on the **Internal Service** link under the Inference endpoint column, and make note of the grpcURL value, we will need it later.
+
+image::grpcurl.png[]
+
+== Test the model
+
+Now that the model server is ready to receive requests, we can test it.
+
+* In your project in JupyterLab, open the notebook `04_remote_inference` and follow the instructions to see how the model can be queried.
+
+* After that, you can go to the link:5-intelligent-application.html[next section] to deploy the application that will use this model.

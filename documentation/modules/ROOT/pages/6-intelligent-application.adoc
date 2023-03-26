@@ -1,2 +1,0 @@
-= 5. Building and deploying an intelligent application - 10 minutes
-:imagesdir: ../assets/images

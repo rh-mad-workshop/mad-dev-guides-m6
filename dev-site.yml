@@ -20,6 +20,13 @@ asciidoc:
     - ./lib/remote-include-processor.js
     - ./lib/tab-block.js
 
+antora:
+  extensions:
+    - require: '@sntke/antora-mermaid-extension'
+      mermaid_library_url: https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+      script_stem: header-scripts
+
+
 ui:
   bundle:
     url: https://github.com/danieloh30/course-ui/raw/main/ui-bundle-fix-rexp.zip
