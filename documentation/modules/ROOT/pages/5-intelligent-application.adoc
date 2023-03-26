@@ -1,0 +1,96 @@
+= Building and deploying an intelligent application
+:imagesdir: ../assets/images
+
+The application we are going to deploy is a simple example of how you can add an "intelligent" feature powered by AI/ML to an application. It is a webapp that you can use on your phone to discover coupons on various items you can see in a store, in an augmented reality way.
+
+== Architecture
+
+++++
+<style>
+.mermaid {
+  width: 100%;
+}
+</style>
+++++
+[mermaid]
+....
+sequenceDiagram
+autonumber
+
+participant f as Frontend
+participant b as Backend
+participant i as Inference Service
+participant m as Model Server
+
+f ->> b : Send the image<br/>to analyze
+b ->> i : Pass the image to<br/>the inference service
+i ->> m : Pre-process the image<br/>and call the model server
+m ->> i : Send back the inference result
+i ->> b : Post-process the inference<br/>and send back the result
+b ->> f : Pass the result to<br/>the frontend for display
+....
+
+The different components are:
+
+* The Frontend: a https://react.dev/[React] application, typically running on the browser of your phone,
+* The Backend: a NodeJS server, serving the application and relaying API calls,
+* The Inference service: a Python https://fastapi.tiangolo.com/[FastAPI] service, doing the image pre-processing, calling the model server API, and doing the post-processing before sending the results back.
+* The Model server: the RHODS component serving the model as an API to do the inference.
+
+NOTE: This architecture could be simplified by "merging" the Backend part and the Inference service. In this workshop we kept the two separated so that you can verify by yourself that the code running in the Inference service is the same as the one we used in the notebook in the previous section.
+
+== Deploy the application
+
+The deployment of the application is really easy, as we already created for you the necessary YAML files. They are included in the Git project we used for this workshop. You can find them **in the `deployment` folder inside you Jupyter environment**, or directly https://github.com/rh-aiservices-bu/mad_m6_workshop/tree/main/deployment[here]. 
+
+Of course, you can take a few minutes to look at the code of the application or the inference service.
+
+To deploy the inference service and the application:
+
+- From your OpenShift Console, navigate to your project, and click on the "Import YAML" button, the "plus" sign on the top right:
+
+image::import_yaml.png[]
+
+- Copy/Paste the content of the file `inference_service_deployment.yaml` inside the Window. If you have named your model `coolstore` as instructed, you're good to go. If not, modify the value on line 35 with the name you set. You can then click on `Create`:
+
+image::create_inference_service.png[]
+
+- Copy/Paste the content of the file `intelligent_application_deployment.yaml` inside the Window. Nothing to change here, you can then click on `Create`:
+
+image::create_application_deployment.png[]
+
+- After both deployments are successful your application will be accessible at https://ia-frontend-your_project_name.%SUBDOMAIN%
+
+== Use the application
+
+The application is relatively straightforward to use. You have first to allow it to use your camera, this is the interface you get:
+
+image::app_ui.png[]
+
+You have:
+
+- The current view of your camera.
+- A button to take a picture:
+
+image::take_picture_button.png[]
+
+- A button to switch from front to rear camera if you are using a phone:
+
+image::switch_camera_button.png[]
+
+- A QR code that you can use to quickly open the application on a phone (much easier than typing the URL!):
+
+image::qr_code_example.png[]
+
+When you take a picture, it will be sent to the inference service, and you will see which items have been detected, and if there is a promotion available!
+
+== Tweak the application
+
+There are two parameters you can change on this application:
+
+- On the `ia-frontend` Deployment, you can modify the `DISPLAY_BOX` environment variable from `true` to `false`. It will hide the bounding box and the inference score, so that you get only the coupon "flying" over the item.
+- On the `ia-inference` Deployment, you can modify the `COUPON_VALUE` environment variable. The format is simply an Array with the value of the coupon for the 3 classes: bottle, hat, shirt. As you see, these values could be adjusted in real time, and this could even be based on another ML model! But this would be a subject for another workshop...
+
+
+
+

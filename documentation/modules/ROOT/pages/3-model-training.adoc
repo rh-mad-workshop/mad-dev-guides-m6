@@ -1,4 +1,4 @@
-= Model training
+= Training a model
 :imagesdir: ../assets/images
 
 In this section, we will explore how data scientists are training models. It will be a very simple example, but it will give you the basics on the workflow.
@@ -9,11 +9,11 @@ image::close_sandbox.png[]
 
 We also need to shut down the pod, as for the rest of the workshop we will use a Data Science Project.
 
-* If you still have you OpenShift Data Science dashboard tab opened in your browser, you simply close the JupyterLab tab, and click on **Stop notebook server** on the dashboard:
+* If you still have you OpenShift Data Science dashboard tab opened in your browser, head to it. You can then simply close the JupyterLab tab, and click on **Stop notebook server** on the dashboard:
 
 image::stop_notebook_server.png[]
 
-* If you have closed the OpenShift Data Science dashboard, you can reopen from Jupyter by clicking on **File->Hub Control Panel**:
+* If you had closed the OpenShift Data Science dashboard, you can access it here, https://rhods-dashboard-redhat-ods-applications.%SUBDOMAIN%, or you can reopen it from Jupyter by clicking on **File->Hub Control Panel**:
 
 image::hub_panel.png[]
 
@@ -21,7 +21,7 @@ It will reopen a tab with the dashboard, from which you can stop the notebook en
 
 == Data Science Project
 
-We will need a data science project to host all our work: model training, model serving, application deployment,... As stated earlier, a data science project translates to an OpenShift project, but you don't need to leave the RHODS environment!
+First, we will need a data science project to organize all our work: model training, model serving, application deployment,... As we said earlier, a data science project is in fact an OpenShift project, but you don't need to leave the RHODS environment to create it!
 
 === Creating the DSP
 
@@ -29,7 +29,7 @@ We will need a data science project to host all our work: model training, model 
 
 image::create_dsp.png[]
 
-* Give a name to your project. It will be the Display name for OpenShift, and the Resource name is automatically sanitized and created for you. You can also add a description if you want:
+* Give a name to your project (of course it has to be a unique one!). It will be the Display name for OpenShift, and the Resource name is automatically sanitized and created for you. You can also add a description if you want:
 
 image::create_dsp_modal.png[]
 
@@ -41,9 +41,9 @@ image::my_dsp_console.png[]
 
 In a Data Science Project you have different sections:
 
-* Workbenches are development environments. They can be based on JupyterLab, but also on other types of IDEs as we will see later, like VSCode and RStudio. You can create as many workbenches as you want, and they can run concurrently.
-* Cluster storage is in fact PVCs. You can create them directly from here, and mount them in your workbenches as you like. A default cluster storage (PVC) is always created with a new workbench to save your work.
-* Data connections are configurations for remote data location. At the moment, only Object Storage compatible with S3 is supported. We will use this feature later on to configure storage for our models on OpenShift Data Foundation with the Multi Cloud Gateway (MCG).
+* Workbenches are development environments. They can be based on JupyterLab, but also on other types of IDEs, like VSCode or RStudio. You can create as many workbenches as you want, and they can run concurrently.
+* Cluster storage are PVCs. You can create them directly from here, and mount them in your workbenches as you like. Note that a default cluster storage (PVC) is always automatically created with a new workbench to save your work.
+* Data connections are configurations for remote data location. At the moment, only S3-compatible Object Storage is supported. We will use this feature later on to configure the storage for our models.
 * Finally, Model Servers are used to... serve models! But let's save that for later.
 
 For now, let's create a new workbench to work with Tensorflow to train models!
@@ -67,7 +67,7 @@ image::workbench_starting.png[]
 
 You can use this toggle to easily start/stop this environment later on.
 
-* When it is ready, the state will change to **Running** and you can click on **Open** to get to your environment:
+* When it is ready, the state will change to **Running** and you can click on **Open** to go to your environment:
 
 image::workbench_running.png[]
 
@@ -81,7 +81,9 @@ We are now ready to do some serious work!
 
 * Again, from the Git menu on the left, clone the repository https://github.com/rh-aiservices-bu/mad_m6_workshop.git
 
-* Open the file 02_model_training_basics.ipynb, and follow the instructions directly in the notebook. When you are finished, you can come back here and head for the next section.
+* Enter the folder you just cloned, `mad_m6_workshop`, open the file `02_model_training_basics`, and follow the instructions directly in the notebook. Don't forget to run the cells along the way!
+
+* When you are finished, you can come back here and head for the link:4-model-deployment.html[next section].
 
 
 

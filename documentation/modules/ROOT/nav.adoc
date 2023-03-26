@@ -2,5 +2,5 @@
 * xref:2-notebooks.adoc[Working with notebooks]
 * xref:3-model-training.adoc[Training a model]
 * xref:4-model-deployment.adoc[Deploying a model]
-* xref:5-custom-images.adoc[Custom images]
-* xref:6-intelligent-application.adoc[Deploying an intelligent application]
+* xref:5-intelligent-application.adoc[Deploying an intelligent application]
+* xref:6-conclusion.adoc[Conclusion]
