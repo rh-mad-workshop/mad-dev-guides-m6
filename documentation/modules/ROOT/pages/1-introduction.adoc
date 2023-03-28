@@ -11,7 +11,7 @@ In this workshop we will see how to use OpenShift Data Science to train a model,
 
 OpenShift Data Science has already been deployed in the workshop environment.
 
-To get started, access it at the address: https://rhods-dashboard-redhat-ods-applications.%SUBDOMAIN%
+To get started, access it at the address: https://rhods-dashboard-redhat-ods-applications.%SUBDOMAIN%[window=_blank]
 
 Login with your username (`%USERID%`) and your password (`{openshift-password}`), and authorize the requested permissions if needed:
 
