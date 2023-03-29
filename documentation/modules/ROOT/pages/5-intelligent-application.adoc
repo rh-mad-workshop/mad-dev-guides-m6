@@ -32,16 +32,16 @@ b ->> f : Pass the result to<br/>the frontend for display
 
 The different components are:
 
-* The Frontend: a https://react.dev/[React] application, typically running on the browser of your phone,
+* The Frontend: a https://react.dev/[React^] application, typically running on the browser of your phone,
 * The Backend: a NodeJS server, serving the application and relaying API calls,
-* The Pre-Post Processing Service: a Python https://fastapi.tiangolo.com/[FastAPI] service, doing the image pre-processing, calling the model server API, and doing the post-processing before sending the results back.
+* The Pre-Post Processing Service: a Python https://fastapi.tiangolo.com/[FastAPI^] service, doing the image pre-processing, calling the model server API, and doing the post-processing before sending the results back.
 * The Model Server: the RHODS component serving the model as an API to do the inference.
 
 NOTE: This architecture could be simplified by "merging" the Backend part and the Pre-Post Processing service. In this workshop we kept the two separated so that you can verify by yourself that the code running in the Pre-Post Processing service is the same as the one we used in the notebook in the previous section.
 
 == Deploy the application
 
-The deployment of the application is really easy, as we already created for you the necessary YAML files. They are included in the Git project we used for this workshop. You can find them **in the `deployment` folder inside you Jupyter environment**, or directly https://github.com/rh-aiservices-bu/mad_m6_workshop/tree/main/deployment[here]. 
+The deployment of the application is really easy, as we already created for you the necessary YAML files. They are included in the Git project we used for this workshop. You can find them **in the `deployment` folder inside you Jupyter environment**, or directly https://github.com/rh-aiservices-bu/mad_m6_workshop/tree/main/deployment[here^]. 
 
 Of course, you can take a few minutes to look at the code of the Frontend, Backend or the Pre-Post Processing service.
 

@@ -3,7 +3,7 @@
 
 == What is Red Hat OpenShift Data Science (RHODS)?
 
-https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-data-science[Red Hat OpenShift Data Science] is a platform for data scientists, data engineers and developers of intelligent applications, running on OpenShift. It provides a fully supported environment in which to rapidly develop, train, and test machine learning (ML) models that can be deployed in production. You can of course also use it for more standard data analysis or data processing.
+https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-data-science[Red Hat OpenShift Data Science^] is a platform for data scientists, data engineers and developers of intelligent applications, running on OpenShift. It provides a fully supported environment in which to rapidly develop, train, and test machine learning (ML) models that can be deployed in production. You can of course also use it for more standard data analysis or data processing.
 
 In this workshop we will see how to use OpenShift Data Science to train a model, how to serve this model as an API, and how to create an intelligent application that will use this model. In exploring this content, you will become familiar with the OpenShift Data Science offering and the common workflows to use with it.
 
@@ -11,7 +11,7 @@ In this workshop we will see how to use OpenShift Data Science to train a model,
 
 OpenShift Data Science has already been deployed in the workshop environment.
 
-To get started, access it at the address: https://rhods-dashboard-redhat-ods-applications.%SUBDOMAIN%[window=_blank]
+To get started, access it at the address: https://rhods-dashboard-redhat-ods-applications.%SUBDOMAIN%[^]
 
 Login with your username (`%USERID%`) and your password (`{openshift-password}`), and authorize the requested permissions if needed:
 

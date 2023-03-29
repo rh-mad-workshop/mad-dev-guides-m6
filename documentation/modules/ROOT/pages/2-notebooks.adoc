@@ -119,6 +119,6 @@ You can also create a notebook by simply clicking on the icon in the launcher:
 
 image::launch_notebook_icon.png[]
 
-If you want to learn more about notebooks, head to https://jupyter.org/[this page,window=_blank].
+If you want to learn more about notebooks, head to https://jupyter.org/[this page^].
 
 Now that you are more familiar with notebooks, you are ready to go to the link:3-model-training.html[next section].
