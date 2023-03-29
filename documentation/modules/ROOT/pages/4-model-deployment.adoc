@@ -3,11 +3,11 @@
 
 After this overview of how a model is trained and how to use it, we're going to see how you can use RHODS to serve it, which will make it easier to use later on in our intelligent application.
 
-RHODS integrates the https://docs.openvino.ai/latest/ovms_what_is_openvino_model_server.html[Intel's OpenVino Model Server] runtime, a high-performance system for serving models, optimized for deployment on Intel architectures.
+RHODS integrates the https://docs.openvino.ai/latest/ovms_what_is_openvino_model_server.html[Intel's OpenVino Model Server^] runtime, a high-performance system for serving models, optimized for deployment on Intel architectures.
 
-The model we are going to use is an **object detection model** that is able to isolate and recognize **T-shirts**, **bottles**, and **hats** in pictures. Although the process to train this model is globally the same one as what we have seen in the previous section, it has already been trained as it takes a few hours with the help of a GPU to do it.
+The model we are going to use is an **object detection model** that is able to isolate and recognize **T-shirts**, **bottles**, and **hats** in pictures. Although the process is globally the same one as what we have seen in the previous section, this model has already been trained as it takes a few hours with the help of a GPU to do it. If you want to know more about this training process, you can have a look https://github.com/rh-aiservices-bu/yolov5-transfer-learning[here^].
 
-The resulting model has been saved in the https://onnx.ai/[ONNX] format, an open standard for machine learning interoperability, which is one we can use with OpenVino and RHODS model serving. The model has been stored and is available for download in an AWS S3 bucket.
+The resulting model has been saved in the https://onnx.ai/[ONNX^] format, an open standard for machine learning interoperability, which is one we can use with OpenVino and RHODS model serving. The model has been stored and is available for download in an AWS S3 bucket.
 
 Let's serve this model!
 
