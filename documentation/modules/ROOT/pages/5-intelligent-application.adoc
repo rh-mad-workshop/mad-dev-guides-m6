@@ -63,8 +63,6 @@ image::create_application_deployment.png[]
 
 image::deployment-complete.png[]
 
- your application will be accessible at https://ia-frontend-your_project_name.%SUBDOMAIN%
-
 == 5.3. Use the application
 
 The application is relatively straightforward to use. You have first to allow it to use your camera, this is the interface you get:
