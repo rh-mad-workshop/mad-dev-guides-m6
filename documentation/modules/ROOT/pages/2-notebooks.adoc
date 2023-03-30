@@ -1,7 +1,7 @@
-= Working with notebooks
+= 2. Working with notebooks
 :imagesdir: ../assets/images
 
-== Launching a notebook environment
+== 2.1 Launching a notebook environment
 
 If this is a new thing for you, a notebook is an environment where you can easily run code in an interactive manner. Simply saying that gives you a hint of why it has been heavily adopted by scientists in general, especially data scientists. Experiments are usually done in this interactive trial and error manner, and you will shortly see why this is the perfect environment to do that.
 
@@ -9,7 +9,7 @@ Jupyter is a leading open source notebook solution developed at UC Berkeley, tha
 
 Launching a Jupyter notebook environment in RHODS is pretty easy:
 
-* From the **Applications->Enabled** menu, click on **Launch application** from the **Jupyter** tile:
+* From the **Applications->Enabled** menu, select **Launch application** from the **Jupyter** tile:
 
 image::launch_jupyter.png[]
 
@@ -23,7 +23,7 @@ image::standard_data_science.png[]
 
 image::deployment_size.png[]
 
-* Optionally, if there are GPUs available in your environment, you would be able to choose how many would be allocated to you (0 in our case, we won't need any):
+* Optionally, if there are GPUs available in your environment, you would be able to choose how many would be allocated to you (*0* in our case, we won't need any):
 
 image::gpu.png[]
 
@@ -31,7 +31,7 @@ image::gpu.png[]
 
 image::variables.png[]
 
-* You can then click on **Start Server**:
+* You can then select **Start Server**:
 
 image::start_server.png[]
 
@@ -39,11 +39,14 @@ image::start_server.png[]
 
 image::start.png[]
 
-* And when it's ready you can click on **Open in new tab** to get access to your environment:
+* And when it's ready you can select **Open in new tab** to get access to your environment:
 
 image::open_new_tab.png[]
 
 * You will have to login again, and the first time you access the environment authorize the access to different information.
+
+ * *Username*: `%USERID%`
+ * *Password*: `{openshift-password}`
 
 image::authorize.png[]
 
@@ -51,23 +54,23 @@ image::authorize.png[]
 
 image::jupyterlab.png[]
 
-== Working with JupyterLab
+== 2.2. Working with JupyterLab
 
-JupyterLab is an IDE that will let you primarily work with **notebooks**. As you can see, it's a web-based environment, but everything you will do here is in fact happening on the Red Hat OpenShift Data Science cluster, in the Pod for which you selected the image and the size.
+*JupyterLab* is an IDE that will let you primarily work with **notebooks**. As you can see, it's a web-based environment, but everything you will do here is in fact happening on the Red Hat OpenShift Data Science cluster, in the Pod for which you selected the image and the size.
 
 This means that without having to install and maintain anything on your own computer, and without disposing of lots of local resources like CPU and RAM, you can conduct your Data Science work in this powerful and stable managed environment.
 
-On the left side, in the “file-browser-like" panel, you will find the files and folders that are saved inside your own personal space inside Red Hat OpenShift Data Science. It is pretty empty right now though… So the first thing we will do is to bring the content of the workshop inside this environment.
+On the left side, in the *file-browser-like* panel, you will find the files and folders that are saved inside your own personal space inside Red Hat OpenShift Data Science. It is pretty empty right now though. So the first thing we will do is to bring the content of the workshop inside this environment.
 
-* On the left toolbar, click on the Git icon:
+* On the left toolbar, select the Git icon:
 
 image::git.png[]
 
-* Then click on “Clone a Repository”:
+* Then select `Clone a Repository`:
 
 image::git_clone.png[]
 
-* Enter this URL, https://github.com/rh-aiservices-bu/mad_m6_workshop.git, then click on “CLONE”:
+* Enter this URL, https://github.com/rh-aiservices-bu/mad_m6_workshop.git, then select `CLONE`:
 
 image::clone_repo.png[]
 
@@ -77,11 +80,11 @@ image::open_mad_workshop.png[]
 
 We are now ready to use notebooks!
 
-== Working with notebooks
+== 2.3. Working with notebooks
 
 This section provides a small introduction on how to use Jupyter Notebooks. If you are already at ease with Jupyter, you can directly head to the link:3-model-training.html[next section].
 
-=== What's a notebook?
+=== 2.3.1. What's a notebook?
 
 * A notebook is an environment where you have cells that can display formatted text, or code.
 
@@ -93,9 +96,9 @@ And a cell where we have entered some code:
 
 image::cell_with_code.png[]
 
-* Code cells contain Python code that can be run interactively. It means that you can modify the code, then run it, but only for this cell, not for the whole content of the notebook! The code will not run on you computer or in the browser, but directly in the environment you are connected to, Red Hat OpenShift Data Science.
+* Code cells contain Python code that can be run interactively. It means that you can modify the code, then run it, but only for this cell, not for the whole content of the notebook! The code will not run on your computer or in the browser, but directly in the environment you are connected to, Red Hat OpenShift Data Science.
 
-* To run a code cell, you simply select it (click in the cell, or on the left side of it), and click the Run/Play button from the toolbar (you can also press CTRL+Enter to run a cell, or Shift+Enter to run the cell and automatically select the following one).
+* To run a code cell, you simply select it (select the cell, or on the left side of it), and select the Run/Play button from the toolbar (you can also press CTRL+Enter to run a cell, or Shift+Enter to run the cell and automatically select the following one).
 
 The Run button on the toolbar:
 
@@ -107,18 +110,16 @@ As you will see, you then get the result of the code that was run in that cell (
 
 Notebooks are so named because they are just like a physical Notebook. It is exactly like if you were taking notes about your experiments (which you will do), along with the code itself, including any parameters you set. You see the output of the experiment inline (this is the result from a cell once it is run), along with all the notes you want to take (to do that, you can switch the cell type from the menu from `Code` to `Markup`).
 
-=== Time to experiment!
+=== 2.3.2. Time to experiment!
 
 Now that we have covered the basics, just give it a try!
 
-In your Jupyter environment, in file explorer on the left side, there is file called `01_sanbdbox.ipynb`. Double-click on it to launch the notebook (it will open another tab in the content section of the environment, on the right). Please feel free to experiment, run the different cells, add some more code... You can do what you want - it is your environment, and there is no risk of breaking anything or impacting other users. This environment isolation is also a great advantage brought by Red Hat OpenShift Data Science.
+In your Jupyter environment, in file explorer on the left side, there is file called `01_sanbdbox.ipynb`. Double-click it to launch the notebook (it will open another tab in the content section of the environment, on the right). Please feel free to experiment, run the different cells, add some more code... You can do what you want - it is your environment, and there is no risk of breaking anything or impacting other users. This environment isolation is also a great advantage brought by Red Hat OpenShift Data Science.
 
-You can also create a new notebook by selecting `File->New->Notebook` from the menu on the top left, then select a Python 3 kernel. This instructs Jupyter that we want to create a new notebook where the code cells will be run using a Python 3 kernel. We could have different kernels, with different languages or versions that we can run into notebooks, but that is a story for another time…
+You can also create a new notebook by selecting `File->New->Notebook` from the menu on the top left, then select a Python 3 kernel. This instructs Jupyter that we want to create a new notebook where the code cells will be run using a Python 3 kernel. We could have different kernels, with different languages or versions that we can run into notebooks, but that is a story for another time.
 
-You can also create a notebook by simply clicking on the icon in the launcher:
+You can also create a notebook by simply selecting the icon in the launcher:
 
 image::launch_notebook_icon.png[]
 
 If you want to learn more about notebooks, head to https://jupyter.org/[this page^].
-
-Now that you are more familiar with notebooks, you are ready to go to the link:3-model-training.html[next section].

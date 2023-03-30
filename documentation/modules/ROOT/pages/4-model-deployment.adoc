@@ -1,4 +1,4 @@
-= Deploying a model
+= 4. Deploying a model
 :imagesdir: ../assets/images
 
 After this overview of how a model is trained and how to use it, we're going to see how you can use RHODS to serve it, which will make it easier to use later on in our intelligent application.
@@ -11,7 +11,7 @@ The resulting model has been saved in the https://onnx.ai/[ONNX^] format, an ope
 
 Let's serve this model!
 
-== Check the model
+== 4.1. Check the model
 
 There are many ways and different tools available to interact with Object Storage. Here we are going to use the Python library named `boto3`.
 
@@ -25,17 +25,21 @@ Please copy it, you will use it in a few seconds.
 
 * In your project in JupyterLab, open the notebook `03_check_model` and follow the instructions to check the availability and the exact location of the model. Again, don't forget to run the cells!
 
+image::check_model.png[]
+
 * Once you are finished, you can come back to these instructions.
 
-== Deploy the model in RHODS
+image::check_model-complete.png[]
+
+== 4.2. Deploy the model in RHODS
 
 With your model available on S3 storage, it is pretty easy to serve it.
 
-* In the RHODS dashboard, still in your Data Science Project, create a Data connection. It will serve as a reference and configuration for access to the object bucket. In the **Data connections** section, click on **Add data connection**:
+* In the RHODS dashboard, still in your Data Science Project, create a Data connection. It will serve as a reference and configuration for access to the object bucket. In the **Data connections** section, select **Add data connection**:
 
 image::add_data_connection.png[]
 
-* Fill in the information, the click on **Add data connection**:
+* Fill in the information, the select **Add data connection**:
     ** Name it `Coolstore`
     ** `AWS_ACCESS_KEY_ID` is the `Access key` you got in the previous step in the notebook.
     ** `AWS_SECRET_ACCESS_KEY` is the `Secret key` you got in the previous step in the notebook.
@@ -49,23 +53,19 @@ image::data_connection_configuration.png[]
 
 image::data_connection_ok.png[]
 
-* Now, on the **Models and model servers** section click on **Configure server**:
+* Now, on the **Models and model servers** section select **Configure server**:
 
 image::configure_model_server.png[]
 
-* Leave replicas to 1, size to Small. At this point, don't check **Make model available via an external route**. Then click on **Configure**:
+* Leave replicas to 1, size to Small. At this point, `don't` check **Make model available via an external route**. Then select **Configure**:
 
 image::model_server_configure.png[]
 
-* We now have a model server available (but no model deployed yet):
+* We now have a model server available (but no model deployed yet). Select **Deploy model**:
 
 image::model_server_available.png[]
 
-* Click on **Deploy model**:
-
-image::deploy_model.png[]
-
-* Give a name to your model, `coolstore`, select **onnx - 1** for the framework, select the Data location you created before for the Model location, and enter **coolstore-model** as the folder path for the model (without leading `/`!), then click on **Deploy**:
+* Give a name to your model, `coolstore`, select **onnx - 1** for the framework, select the Data location you created before for the Model location, and enter **coolstore-model** as the folder path for the model (without leading `/`), then select **Deploy**:
 
 image::deploy_model_configuration.png[]
 
@@ -77,14 +77,18 @@ image::deployed_models.png[]
 
 image::model_ready.png[]
 
-* Once it's ready, click on the **Internal Service** link under the Inference endpoint column, and make note of the grpcURL value, we will need it later.
+* Once it's ready, select the **Internal Service** link under the Inference endpoint column, and make note of the grpcURL value, we will need it later.
 
 image::grpcurl.png[]
 
-== Test the model
+== 4.3. Test the model
 
 Now that the model server is ready to receive requests, we can test it.
 
 * In your project in JupyterLab, open the notebook `04_remote_inference` and follow the instructions to see how the model can be queried.
 
-* After that, you can go to the link:5-intelligent-application.html[next section] to deploy the application that will use this model.
+image::remote_inference.png[]
+
+* Once you complete the notebook's instruction, you will end up with this result.
+
+image::remote_inference_complete.png[]

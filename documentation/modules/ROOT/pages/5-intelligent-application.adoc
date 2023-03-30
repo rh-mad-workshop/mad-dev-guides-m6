@@ -1,9 +1,9 @@
-= Building and deploying an intelligent application
+= 5. Building and deploying an intelligent application
 :imagesdir: ../assets/images
 
-The application we are going to deploy is a simple example of how you can add an "intelligent" feature powered by AI/ML to an application. It is a webapp that you can use on your phone to discover coupons on various items you can see in a store, in an augmented reality way.
+The application we are going to deploy is a simple example of how you can add an *intelligent* feature powered by AI/ML to an application. It is a webapp that you can use on your phone to discover coupons on various items you can see in a store, in an augmented reality way.
 
-== Architecture
+== 5.1. Architecture
 
 ++++
 <style>
@@ -39,7 +39,7 @@ The different components are:
 
 NOTE: This architecture could be simplified by "merging" the Backend part and the Pre-Post Processing service. In this workshop we kept the two separated so that you can verify by yourself that the code running in the Pre-Post Processing service is the same as the one we used in the notebook in the previous section.
 
-== Deploy the application
+== 5.2. Deploy the application
 
 The deployment of the application is really easy, as we already created for you the necessary YAML files. They are included in the Git project we used for this workshop. You can find them **in the `deployment` folder inside you Jupyter environment**, or directly https://github.com/rh-aiservices-bu/mad_m6_workshop/tree/main/deployment[here^]. 
 
@@ -47,21 +47,25 @@ Of course, you can take a few minutes to look at the code of the Frontend, Backe
 
 To deploy the Pre-Post Processing Service service and the Application:
 
-- From your OpenShift Console, navigate to your project, and click on the "Import YAML" button, the "plus" sign on the top right:
+- From your OpenShift Console, navigate to your project, and select the "Import YAML" button, the "plus" sign on the top right:
 
 image::import_yaml.png[]
 
-- Copy/Paste the content of the file `pre_post_processor_deployment.yaml` inside the Window. If you have named your model `coolstore` as instructed, you're good to go. If not, modify the value on line 35 with the name you set. You can then click on `Create`:
+- Copy/Paste the content of the file `pre_post_processor_deployment.yaml` inside the Window. If you have named your model `coolstore` as instructed, you're good to go. If not, modify the value on line 35 with the name you set. You can then select `Create`:
 
 image::create_inference_service.png[]
 
-- Copy/Paste the content of the file `intelligent_application_deployment.yaml` inside the Window. Nothing to change here, you can then click on `Create`:
+- Copy/Paste the content of the file `intelligent_application_deployment.yaml` inside the Window. Nothing to change here, you can then select `Create`:
 
 image::create_application_deployment.png[]
 
-- After both deployments are successful your application will be accessible at https://ia-frontend-your_project_name.%SUBDOMAIN%
+- Go back to https://console-openshift-console.%SUBDOMAIN%/k8s/cluster/projects/%USERID%-data-science-project?view=graph[OpenShift web console^] if both deployments are successful.
 
-== Use the application
+image::deployment-complete.png[]
+
+ your application will be accessible at https://ia-frontend-your_project_name.%SUBDOMAIN%
+
+== 5.3. Use the application
 
 The application is relatively straightforward to use. You have first to allow it to use your camera, this is the interface you get:
 
@@ -84,12 +88,12 @@ image::qr_code_example.png[]
 
 When you take a picture, it will be sent to the inference service, and you will see which items have been detected, and if there is a promotion available!
 
-== Tweak the application
+== 5.4. Tweak the application
 
 There are two parameters you can change on this application:
 
-- On the `ia-frontend` Deployment, you can modify the `DISPLAY_BOX` environment variable from `true` to `false`. It will hide the bounding box and the inference score, so that you get only the coupon "flying" over the item.
-- On the `ia-inference` Deployment, the one used for pre-post processing, you can modify the `COUPON_VALUE` environment variable. The format is simply an Array with the value of the coupon for the 3 classes: bottle, hat, shirt. As you see, these values could be adjusted in real time, and this could even be based on another ML model! But this would be a subject for another workshop...
+- On the `ia-frontend` Deployment, you can modify the `DISPLAY_BOX` environment variable from `true` to `false`. It will hide the bounding box and the inference score, so that you get only the coupon *flying* over the item.
+- On the `ia-inference` Deployment, the one used for pre-post processing, you can modify the `COUPON_VALUE` environment variable. The format is simply an Array with the value of the coupon for the 3 classes: bottle, hat, shirt. As you see, these values could be adjusted in real time, and this could even be based on another ML model! But this would be a subject for another workshop.
 
 
 
