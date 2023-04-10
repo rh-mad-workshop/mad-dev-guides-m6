@@ -31,7 +31,7 @@ image::create_dsp.png[]
 
 * Type the following values in the popup window. It will be the Display name for OpenShift, and the Resource name is automatically sanitized and created for you.
 
-* *Name*:` %USERID% data science project`
+* *Name*: `%USERID% data science project`
 * *Resource name*: `%USERID%-data-science-project`
 * *Description*: `This is my first try at data science!`
 
