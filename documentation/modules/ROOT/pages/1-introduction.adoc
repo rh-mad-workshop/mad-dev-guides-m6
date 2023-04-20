@@ -1,4 +1,4 @@
-= 1. Red Hat OpenShift Data Science Introduction
+= 1. Red Hat OpenShift Data Science Introduction - 10 minutes
 :imagesdir: ../assets/images
 
 == 1.1 What is Red Hat OpenShift Data Science (RHODS)?

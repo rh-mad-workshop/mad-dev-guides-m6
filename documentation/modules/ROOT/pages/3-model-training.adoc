@@ -1,4 +1,4 @@
-= 3. Training a model
+= 3. Training a model - 15 minutes
 :imagesdir: ../assets/images
 
 In this section, we will explore how data scientists are training models. It will be a very simple example, but it will give you the basics on the workflow.
@@ -7,7 +7,7 @@ In this section, we will explore how data scientists are training models. It wil
 
 image::close_sandbox.png[]
 
-We also need to shut down the pod, as for the rest of the workshop we will use a Data Science Project.
+We also need to shut down the Jupyter notebook environment and pod, as for the rest of the workshop we will use a Data Science Project.
 
 * If you still have you OpenShift Data Science dashboard tab opened in your browser, head to it. You can then simply close the JupyterLab tab, and select **Stop notebook server** on the dashboard:
 
@@ -37,7 +37,7 @@ image::create_dsp.png[]
 
 image::create_dsp_modal.png[]
 
-* Now, if you are curious and have a look at your https://console-openshift-console.%SUBDOMAIN%/k8s/cluster/projects/%USERID%-data-science-project[OpenShift console^], you will see that the project has indeed been created:
+* Now, if you are curious and have a look at your https://console-openshift-console.%SUBDOMAIN%/k8s/cluster/projects/%USERID%-data-science-project[OpenShift console^], you will see that the project has indeed been created (login may be needed if you never connected to the Console):
 
 image::my_dsp_console.png[]
 
@@ -46,7 +46,7 @@ image::my_dsp_console.png[]
 In a Data Science Project you have different sections:
 
 * Workbenches are development environments. They can be based on JupyterLab, but also on other types of IDEs, like VS Code or RStudio. You can create as many workbenches as you want, and they can run concurrently.
-* Cluster storage are PVCs. You can create them directly from here, and mount them in your workbenches as you like. Note that a default cluster storage (PVC) is always automatically created with a new workbench to save your work.
+* Cluster storage are Persistent Volumes Claims (PVCs), the persistent storage spaces you can use to store your notebooks and data. You can create them directly from here, and mount them in your workbenches as you like. Note that a default cluster storage (PVC) is always automatically created with a new workbench to save your work.
 * Data connections are configurations for remote data location. At the moment, only S3-compatible Object Storage is supported. We will use this feature later on to configure the storage for our models.
 * Finally, Model Servers are used to serve models! But let's save that for later.
 
@@ -83,6 +83,24 @@ image::workbench_jl.png[]
 
 We are now ready to do some serious work!
 
-* Again, from the Git menu on the left, clone the repository https://github.com/rh-aiservices-bu/mad_m6_workshop.git
+* Again, go to the Git menu on the left:
 
-* Enter the folder you just cloned, `mad_m6_workshop`, open the file `02_model_training_basics`, and follow the instructions directly in the notebook. Don't forget to run the cells along the way!
+image::git.png[]
+
+* Then select `Clone a Repository`:
+
+image::git_clone.png[]
+
+* Enter the URL https://github.com/rh-aiservices-bu/mad_m6_workshop.git, then select `CLONE`:
+
+image::clone_repo.png[]
+
+* It takes a few seconds, after which you can double-click and navigate to the newly-created folder, **mad_m6_workshop**:
+
+image::open_mad_workshop.png[]
+
+* In the `mad_m6_workshop` folder, open the file `02_model_training_basics`.
+
+* Follow the steps in the notebook, and run each cell as you go. There may be an Error message when running the cell where `pip install` are done, but you can safely ignore it.
+
+image::run_cell.png[]
