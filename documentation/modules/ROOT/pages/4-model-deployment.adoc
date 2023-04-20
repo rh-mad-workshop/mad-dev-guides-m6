@@ -1,4 +1,4 @@
-= 4. Deploying a model
+= 4. Deploying a model - 15 minutes
 :imagesdir: ../assets/images
 
 After this overview of how a model is trained and how to use it, we're going to see how you can use RHODS to serve it, which will make it easier to use later on in our intelligent application.
@@ -17,9 +17,12 @@ There are many ways and different tools available to interact with Object Storag
 
 * In the notebook we are going to use, you will need to enter a key to decrypt the credentials to access the model location. This key is:
 
-`Is_34AxyLht603Lh4z6UYztla79lQ3oz_os7U99JsKQ=`
+[source,text]
+----
+Is_34AxyLht603Lh4z6UYztla79lQ3oz_os7U99JsKQ=
+----
 
-Please copy it, you will use it in a few seconds.
+Please copy it, you will need it in a few seconds to replace the `replace_me` placeholder in the first cell of the notebook.
 
 (Don't worry, the bucket we are going to access is readonly, and those access/secret can only be used to read the public model file. So even the decrypted credentials are not sensitive at all.)
 
@@ -35,6 +38,10 @@ image::check_model-complete.png[]
 
 With your model available on S3 storage, it is pretty easy to serve it.
 
+* Switch back to the OpenShift Data Science dashboard. If you have closed it, you can access it https://rhods-dashboard-redhat-ods-applications.%SUBDOMAIN%[here^] or you can reopen it from Jupyter by clicking on **File->Hub Control Panel**:
+
+image::hub_panel.png[]
+
 * In the RHODS dashboard, still in your Data Science Project, create a Data connection. It will serve as a reference and configuration for access to the object bucket. In the **Data connections** section, select **Add data connection**:
 
 image::add_data_connection.png[]
@@ -46,6 +53,8 @@ image::add_data_connection.png[]
     ** `AWS_S3_ENDPOINT` is `https://s3.amazonaws.com/` (default).
     ** `AWS_DEFAULT_REGION` is `us-east-1` (default).
     ** `AWS_S3_BUCKET` is `rh-mad-workshop-m6`.
+
+No need to specify any connected workbench, this data connection will only be used by the model server.
 
 image::data_connection_configuration.png[]
 
@@ -69,7 +78,7 @@ image::model_server_available.png[]
 
 image::deploy_model_configuration.png[]
 
-* The model is now deployed:
+* The model is now deploying. You should click on the `1` on the `Deployed models` tab to see details:
 
 image::deployed_models.png[]
 
@@ -77,7 +86,7 @@ image::deployed_models.png[]
 
 image::model_ready.png[]
 
-* Once it's ready, select the **Internal Service** link under the Inference endpoint column, and make note of the grpcURL value, we will need it later.
+* Once it's ready, select the **Internal Service** link under the Inference endpoint column, and make note of the grpcURL value, we will need it later. It should be `grpc://modelmesh-serving.%USERID%-data-science-project:8033`
 
 image::grpcurl.png[]
 

@@ -1,4 +1,4 @@
-= 2. Working with notebooks
+= 2. Working with notebooks - 10 minutes
 :imagesdir: ../assets/images
 
 == 2.1 Launching a notebook environment
