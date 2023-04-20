@@ -1,4 +1,4 @@
-= 5. Building and deploying an intelligent application
+= 5. Building and deploying an intelligent application - 10 minutes
 :imagesdir: ../assets/images
 
 The application we are going to deploy is a simple example of how you can add an *intelligent* feature powered by AI/ML to an application. It is a webapp that you can use on your phone to discover coupons on various items you can see in a store, in an augmented reality way.
@@ -47,7 +47,7 @@ Of course, you can take a few minutes to look at the code of the Frontend, Backe
 
 To deploy the Pre-Post Processing Service service and the Application:
 
-- From your OpenShift Console, navigate to your project, and select the "Import YAML" button, the "plus" sign on the top right:
+- From your https://console-openshift-console.%SUBDOMAIN%/k8s/cluster/projects/%USERID%-data-science-project[OpenShift Console^], navigate to your project, **%USERID%-data-science-project**, and select the "Import YAML" button, the "plus" sign on the top right:
 
 image::import_yaml.png[]
 
@@ -65,7 +65,9 @@ image::deployment-complete.png[]
 
 == 5.3. Use the application
 
-The application is relatively straightforward to use. You have first to allow it to use your camera, this is the interface you get:
+The application is relatively straightforward to use. Click on the URL for the Route `ia-frontend` that was created. This URL should be: https://ia-frontend-%USERID%-data-science-project.%SUBDOMAIN%/[https://ia-frontend-%USERID%-data-science-project.%SUBDOMAIN%/^]
+
+You have first to allow it to use your camera, this is the interface you get:
 
 image::app_ui.png[]
 
@@ -80,7 +82,7 @@ image::take_picture_button.png[]
 
 image::switch_camera_button.png[]
 
-- A QR code that you can use to quickly open the application on a phone (much easier than typing the URL!):
+- A QR code that you can use to quickly open the application **on a phone** (much easier than typing the URL!):
 
 image::qr_code_example.png[]
 
