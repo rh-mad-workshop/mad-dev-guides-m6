@@ -66,6 +66,7 @@ image::data_connection_ok.png[]
 
 image::configure_model_server.png[]
 
+* Type *coolstore-modelserver* in the model server name. Select *OpenVINO Model Server* in Serving runtime. 
 * Leave replicas to 1, size to Small. At this point, `don't` check **Make model available via an external route**. Then select **Configure**:
 
 image::model_server_configure.png[]
