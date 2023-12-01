@@ -56,7 +56,7 @@ For now, let's create a new workbench to work with Tensorflow to train models!
 
 image::create_workbench.png[]
 
-* Give it a name, select the **Tensorflow** image, with a Deployment size of **Small**, and a Cluster storage space of 1GB, it will be enough:
+* Give it a name, select the **Tensorflow** image with the version **2023.1**, a Deployment size of **Small**, and a Cluster storage space of **1GB**, it will be enough:
 
 image::create_workbench_1.png[]
 image::create_workbench_2.png[]

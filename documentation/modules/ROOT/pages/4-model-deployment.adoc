@@ -24,6 +24,8 @@ Is_34AxyLht603Lh4z6UYztla79lQ3oz_os7U99JsKQ=
 
 Please copy it, you will need it in a few seconds to replace the `replace_me` placeholder in the first cell of the notebook.
 
+IMPORTANT: When you copy the key, don't forget to select the "=" sign at the end of the line.
+
 (Don't worry, the bucket we are going to access is readonly, and those access/secret can only be used to read the public model file. So even the decrypted credentials are not sensitive at all.)
 
 * In your project in JupyterLab, open the notebook `03_check_model` and follow the instructions to check the availability and the exact location of the model. Again, don't forget to run the cells!
@@ -48,11 +50,11 @@ image::add_data_connection.png[]
 
 * Fill in the information, the select **Add data connection**:
     ** Name it `Coolstore`
-    ** `AWS_ACCESS_KEY_ID` is the `Access key` you got in the previous step in the notebook.
-    ** `AWS_SECRET_ACCESS_KEY` is the `Secret key` you got in the previous step in the notebook.
-    ** `AWS_S3_ENDPOINT` is `https://s3.amazonaws.com/` (default).
-    ** `AWS_DEFAULT_REGION` is `us-east-1` (default).
-    ** `AWS_S3_BUCKET` is `rh-mad-workshop-m6`.
+    ** `Access Key` is the `Access key` you got in the previous step in the notebook.
+    ** `Secret key` is the `Secret key` you got in the previous step in the notebook.
+    ** `Endpoint` is `https://s3.amazonaws.com/` (default).
+    ** `Region` is `us-east-1` (default).
+    ** `Bucket` is `rh-mad-workshop-m6`.
 
 No need to specify any connected workbench, this data connection will only be used by the model server.
 
@@ -64,10 +66,10 @@ image::data_connection_ok.png[]
 
 * Now, on the **Models and model servers** section select **Configure server**:
 
-image::configure_model_server.png[]
+image::add_model_server.png[]
 
 * Type *coolstore-modelserver* in the model server name. Select *OpenVINO Model Server* in Serving runtime. 
-* Leave replicas to 1, size to Small. At this point, `don't` check **Make model available via an external route**. Then select **Configure**:
+* Leave replicas to 1, size to Small. At this point, `don't` check **Make model available via an external route**. Then select **Add**:
 
 image::model_server_configure.png[]
 
