@@ -37,7 +37,20 @@ image::create_dsp.png[]
 
 image::create_dsp_modal.png[]
 
-* Now, if you are curious and have a look at your https://console-openshift-console.%SUBDOMAIN%/k8s/cluster/projects/%USERID%-data-science-project[OpenShift console^], you will see that the project has indeed been created (login may be needed if you never connected to the Console):
+Now, if you are curious and have a look at the *OpenShift console*:
+
+* First, open a new browser to access the link:https://console-openshift-console.%SUBDOMAIN%[OpenShift Web Console^].
+
+* Use the following credentials if you haven't logged in to the OpenShift cluster before. OpenShift is already integrated with https://access.redhat.com/products/red-hat-single-sign-on/[Red Hat Single Sign On^].
+
+image::sso_login.png[openshift_login]
+
+*  Login using your credentials:
+
+** Username: `%USERID%`
+** Password: `{openshift-password}`
+
+Next, access https://console-openshift-console.%SUBDOMAIN%/k8s/cluster/projects/%USERID%-data-science-project[Data Science Project^], you will see that the project has indeed been created.
 
 image::my_dsp_console.png[]
 
