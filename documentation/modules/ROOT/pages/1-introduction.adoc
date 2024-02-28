@@ -13,10 +13,14 @@ OpenShift AI has already been deployed in the workshop environment.
 
 To get started, access https://rhods-dashboard-redhat-ods-applications.%SUBDOMAIN%[OpenShift AI web console^]
 
-Login with the following credential:
+* Use the following credentials if you haven't logged in to the OpenShift cluster before. OpenShift is already integrated with https://access.redhat.com/products/red-hat-single-sign-on/[Red Hat Single Sign On^].
 
- * *Username*: `%USERID%`
- * *Password*: `{openshift-password}`
+image::sso_login.png[openshift_login]
+
+*  Login using your credentials:
+
+** Username: `%USERID%`
+** Password: `{openshift-password}`
  
 Authorize the requested permissions if needed:
 

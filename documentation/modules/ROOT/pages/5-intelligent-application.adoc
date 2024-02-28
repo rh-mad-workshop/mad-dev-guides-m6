@@ -47,7 +47,18 @@ Of course, you can take a few minutes to look at the code of the Frontend, Backe
 
 To deploy the Pre-Post Processing Service service and the Application:
 
-- From your https://console-openshift-console.%SUBDOMAIN%/k8s/cluster/projects/%USERID%-data-science-project[OpenShift Console^], navigate to your project, **%USERID%-data-science-project**, and select the "Import YAML" button, the "plus" sign on the top right:
+* From your https://console-openshift-console.%SUBDOMAIN%/k8s/cluster/projects/%USERID%-data-science-project[OpenShift Console^]
+
+* Use the following credentials if you haven't logged in to the OpenShift cluster before. OpenShift is already integrated with https://access.redhat.com/products/red-hat-single-sign-on/[Red Hat Single Sign On^].
+
+image::sso_login.png[openshift_login]
+
+*  Login using your credentials:
+
+** Username: `%USERID%`
+** Password: `{openshift-password}`
+
+* On your project **%USERID%-data-science-project** select the "Import YAML" button, the "plus" sign on the top right:
 
 image::import_yaml.png[]
 
