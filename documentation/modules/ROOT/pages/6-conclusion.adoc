@@ -5,8 +5,8 @@ We hope you have enjoyed this workshop!
 
 Here is a quick summary of what we have learned:
 
-- How to use **Red Hat OpenShift Data Science**. You can learn more about it https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-data-science[here].
-- How to train a model and deploy it easily on OpenShift Data Science. You will find many other examples and tutorials in our https://developers.redhat.com/products/red-hat-openshift-data-science/getting-started[Learning Paths^].
+- How to use **Red Hat OpenShift AI**. You can learn more about it https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-ai[here].
+- How to train a model and deploy it easily on OpenShift AI. You will find many other examples and tutorials in our https://developers.redhat.com/products/red-hat-openshift-data-science/getting-started[Learning Paths^].
 - How to create an intelligent application that will be able to use a Machine Learning model to enrich it.
 
 And all of this in a single platform, **Red Hat OpenShift**!

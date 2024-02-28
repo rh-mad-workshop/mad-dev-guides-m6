@@ -1,17 +1,17 @@
-= 1. Red Hat OpenShift Data Science Introduction - 10 minutes
+= 1. Red Hat OpenShift AI Introduction - 10 minutes
 :imagesdir: ../assets/images
 
-== 1.1 What is Red Hat OpenShift Data Science (RHODS)?
+== 1.1 What is Red Hat OpenShift AI?
 
-https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-data-science[Red Hat OpenShift Data Science^] is a platform for data scientists, data engineers and developers of intelligent applications, running on OpenShift. It provides a fully supported environment in which to rapidly develop, train, and test machine learning (ML) models that can be deployed in production. You can of course also use it for more standard data analysis or data processing.
+https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-ai[Red Hat OpenShift AI^] is a flexible, scalable MLOps platform with tools to build, deploy, and manage AI-enabled applications. Built using open source technologies, it provides trusted, operationally consistent capabilities for teams to experiment, serve models, and deliver innovative apps. OpenShift AI (previously called Red Hat OpenShift Data Science) supports the full lifecycle of AI/ML experiments and models, on-premise and in the public cloud.
 
-In this workshop we will see how to use OpenShift Data Science to train a model, how to serve this model as an API, and how to create an intelligent application that will use this model. In exploring this content, you will become familiar with the OpenShift Data Science offering and the common workflows to use with it.
+In this workshop we will see how to use OpenShift AI to train a model, how to serve this model as an API, and how to create an intelligent application that will use this model. In exploring this content, you will become familiar with the OpenShift AI offering and the common workflows to use with it.
 
-== 1.2. Access OpenShift Data Science
+== 1.2. Access OpenShift AI
 
-OpenShift Data Science has already been deployed in the workshop environment.
+OpenShift AI has already been deployed in the workshop environment.
 
-To get started, access https://rhods-dashboard-redhat-ods-applications.%SUBDOMAIN%[RHODS web console^]
+To get started, access https://rhods-dashboard-redhat-ods-applications.%SUBDOMAIN%[OpenShift AI web console^]
 
 Login with the following credential:
 
@@ -22,15 +22,15 @@ Authorize the requested permissions if needed:
 
 image::authorize.png[]
 
-== 1.3. Quick tour of RHODS
+== 1.3. Quick tour of OpenShift AI
 
-We will start this workshop with a quick overview of the different elements of RHODS.
+We will start this workshop with a quick overview of the different elements of OpenShift AI.
 
-* In the **Applications->Enabled** section, you will have access or get information about all the applications that are available in this deployment of RHODS:
+* In the **Applications->Enabled** section, you will have access or get information about all the applications that are available in this deployment of OpenShift AI:
 
 image::enabled.png[]
 
-* **Applications->Explore** will show you what other applications can be optionally added to RHODS:
+* **Applications->Explore** will show you what other applications can be optionally added to OpenShift AI:
 
 image::explore.png[]
 
@@ -46,4 +46,4 @@ image::resources.png[]
 
 '''
 
-Now that we know our way around the RHODS environment, let's do some data science!
+Now that we know our way around the OpenShift AI environment, let's do some data science!

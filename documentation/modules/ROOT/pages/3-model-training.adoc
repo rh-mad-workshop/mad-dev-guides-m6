@@ -9,11 +9,11 @@ image::close_sandbox.png[]
 
 We also need to shut down the Jupyter notebook environment and pod, as for the rest of the workshop we will use a Data Science Project.
 
-* If you still have you OpenShift Data Science dashboard tab opened in your browser, head to it. You can then simply close the JupyterLab tab, and select **Stop notebook server** on the dashboard:
+* If you still have you OpenShift AI dashboard tab opened in your browser, head to it. You can then simply close the JupyterLab tab, and select **Stop notebook server** on the dashboard:
 
 image::stop_notebook_server.png[]
 
-* If you had closed the OpenShift Data Science dashboard, you can access it https://rhods-dashboard-redhat-ods-applications.%SUBDOMAIN%[here^] or you can reopen it from Jupyter by clicking on **File->Hub Control Panel**:
+* If you had closed the OpenShift AI dashboard, you can access it https://rhods-dashboard-redhat-ods-applications.%SUBDOMAIN%[here^] or you can reopen it from Jupyter by clicking on **File->Hub Control Panel**:
 
 image::hub_panel.png[]
 
@@ -21,7 +21,7 @@ It will reopen a tab with the dashboard, from which you can stop the notebook en
 
 == 3.1. Data Science Project
 
-First, we will need a data science project to organize all our work: model training, model serving, application deployment. As we said earlier, a data science project is in fact an OpenShift project, but you don't need to leave the RHODS environment to create it!
+First, we will need a data science project to organize all our work: model training, model serving, application deployment. As we said earlier, a data science project is in fact an OpenShift project, but you don't need to leave the OpenShift AI environment to create it!
 
 === 3.1.1. Creating the DSP
 
