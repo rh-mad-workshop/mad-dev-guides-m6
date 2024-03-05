@@ -1,4 +1,4 @@
-* xref:1-introduction.adoc[Introduction to RHODS]
+* xref:1-introduction.adoc[Introduction to OpenShift AI]
 * xref:2-notebooks.adoc[Working with notebooks]
 * xref:3-model-training.adoc[Training a model]
 * xref:4-model-deployment.adoc[Deploying a model]
